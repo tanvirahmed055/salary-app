@@ -150,8 +150,8 @@ const loadFirebaseData = function (resHandler) {
 
 
 const displayLastItemDialog = function (lastItem) {
-  document.getElementById("myModalLabel").innerText = lastItem.name;
-  document.getElementById("salary-body").innerText = lastItem.salary;
+  document.getElementById("myModalLabel").innerText = `Name: ${lastItem.name}`;
+  document.getElementById("salary-body").innerText = `Salary: ${lastItem.salary}`;
 
 };
 
@@ -188,13 +188,7 @@ const showRecordCount = function (data) {
 
   document.getElementById("numberOfRecords").innerText = data.length;
 
-  dlg.dialog({
-    buttons: {
-      Ok: function () {
-        $(this).dialog("close");
-      },
-    },
-  });
+
 };
 
 const anotherRecordCountHandler = function anotherRecordCountHandler(e) {
