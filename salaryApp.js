@@ -132,20 +132,27 @@ const loadFirebaseData = function (resHandler) {
   resHandler(chartData);
 };
 
+// const displayLastItemDialog = function (lastItem) {
+//   const dlg = document.getElementById("dialog-last-item");
+//   dlg.classList.remove("hide");
+//   document.getElementById("showName").innerText = lastItem.name;
+//   document.getElementById("showSalary").innerText = d3.format(",.0f")(
+//     lastItem.salary
+//   );
+//   dlg.dialog({
+//     buttons: {
+//       Ok: function () {
+//         $(this).dialog("close");
+//       },
+//     },
+//   });
+// };
+
+
 const displayLastItemDialog = function (lastItem) {
-  const dlg = document.getElementById("dialog-last-item");
-  dlg.classList.remove("hide");
-  document.getElementById("showName").innerText = lastItem.name;
-  document.getElementById("showSalary").innerText = d3.format(",.0f")(
-    lastItem.salary
-  );
-  dlg.dialog({
-    buttons: {
-      Ok: function () {
-        $(this).dialog("close");
-      },
-    },
-  });
+  document.getElementById("myModalLabel").innerText = lastItem.name;
+  document.getElementById("salary-body").innerText = lastItem.salary;
+
 };
 
 var showDataError = function (name, salary) {
